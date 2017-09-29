@@ -17,7 +17,7 @@ class BooksGrid extends Component {
             <ol className="books-grid">
             {books.map((book) => (
                 <li key={book.id}>
-                    <Book book={book} onChangeBookShelf={ onChangeBookShelf } />
+                    <Book book={book} onChangeBookShelf={ onChangeBookShelf } showModalContent={this.props.showModalContent} />
                 </li>
             ))}
         </ol>

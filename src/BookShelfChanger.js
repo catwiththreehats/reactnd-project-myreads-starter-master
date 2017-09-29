@@ -17,6 +17,7 @@ class BookShelfChanger extends Component {
     }
 
     changeShelf(shelf) {
+        this.setState({ shelf: shelf });
         this.props.onChangeBookShelf( this.props.book, shelf );
     }
 

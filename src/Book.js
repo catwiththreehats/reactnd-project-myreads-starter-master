@@ -9,18 +9,14 @@ class Book extends Component {
         onChangeBookShelf: PropTypes.func.isRequired
     }
 
-    onChangeShelf(targetShelf) {
-
-    }
-
     render() {
 
-        const { book, onChangeBookShelf } = this.props;
+        const { book, onChangeBookShelf, showModalContent } = this.props;
 
         return (
             <div className="book">
                 <div className="book-top">
-                    <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url("${book.imageLinks.thumbnail}")` }}></div>
+                    <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url("${book.imageLinks.thumbnail}")` }} onClick={ () => showModalContent(book.title, book.description) }></div>
                     <BookShelfChanger book={ book } onChangeBookShelf={ onChangeBookShelf } />
                 </div>
                 <div className="book-title">{ book.title }</div>

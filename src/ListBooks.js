@@ -21,9 +21,9 @@ class ListBooks extends Component {
                 </div>
                 <div className="list-books-content">
                     <div>
-                        <BookShelf title="Currently Reading" books={ books.filter((book)=>book.shelf==='currentlyReading') } onChangeBookShelf={ onChangeBookShelf }  />
-                        <BookShelf title="Want to Read" books={ books.filter((book)=>book.shelf==='wantToRead') } onChangeBookShelf={ onChangeBookShelf } />
-                        <BookShelf title="Read" books={ books.filter((book)=>book.shelf==='read') } onChangeBookShelf={ onChangeBookShelf } />
+                        <BookShelf title="Currently Reading" books={ books.filter((book)=>book.shelf==='currentlyReading') } onChangeBookShelf={ onChangeBookShelf } showModalContent={this.props.showModalContent}  />
+                        <BookShelf title="Want to Read" books={ books.filter((book)=>book.shelf==='wantToRead') } onChangeBookShelf={ onChangeBookShelf } showModalContent={this.props.showModalContent} />
+                        <BookShelf title="Read" books={ books.filter((book)=>book.shelf==='read') } onChangeBookShelf={ onChangeBookShelf } showModalContent={this.props.showModalContent} />
                     </div>
                 </div>
                 <div className="open-search">

@@ -18,7 +18,7 @@ class BookShelf extends Component {
             <div className="bookshelf">
                 <h2 className="bookshelf-title">{title}</h2>
                 <div className="bookshelf-books">
-                    <BooksGrid books={books} onChangeBookShelf={ onChangeBookShelf } />
+                    <BooksGrid books={books} onChangeBookShelf={ onChangeBookShelf } showModalContent={this.props.showModalContent} />
                 </div>
             </div>
         );

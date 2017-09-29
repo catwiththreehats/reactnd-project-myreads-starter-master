@@ -53,7 +53,7 @@ class SearchBooks extends Component {
                     </div>
                 </div>
                 <div className="search-books-results">
-                    <BooksGrid books={books} onChangeBookShelf={onChangeBookShelf} />
+                    <BooksGrid books={books} onChangeBookShelf={onChangeBookShelf} showModalContent={this.props.showModalContent} />
                 </div>
 
             </div>
