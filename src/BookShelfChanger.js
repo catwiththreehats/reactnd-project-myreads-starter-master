@@ -22,13 +22,22 @@ class BookShelfChanger extends Component {
     }
 
     render() {
+
+        var shelfOptionValues = [
+            { value: "currentlyReading", caption: "Currently Reading" },
+            { value: "wantToRead", caption: "Want to Read" },
+            { value: "read", caption: "Read" }
+        ];
+
+        var shelfOptions = shelfOptionValues.map((option)=>{
+            return (<option value={option.value}>{option.caption}</option>);
+        })
+
         return (
             <div className="book-shelf-changer">
             <select onChange={ (event)=>this.changeShelf(event.target.value) } value={ this.state.shelf }>
-                <option value="none" disabled>Move to...</option>
-                <option value="currentlyReading">Currently Reading</option>
-                <option value="wantToRead">Want to Read</option>
-                <option value="read">Read</option>
+                <option disabled>Move to...</option>
+                {shelfOptions}
                 {this.state.shelf!=='none' ? <option value="none">None</option> : ''}
             </select>
         </div>

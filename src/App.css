@@ -184,6 +184,8 @@ body, .app {
   font-size: 0.8em;
 }
 
+/* modal content for showing book detail information */
+
 .modal {
   position: fixed;
   z-index: 1;

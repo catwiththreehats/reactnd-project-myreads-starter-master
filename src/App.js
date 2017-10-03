@@ -12,8 +12,7 @@ class BooksApp extends React.Component {
       heading: '',
       body: '',
       visible: false
-    },
-    loading: false
+    }
   }
 
   componentDidMount() {
@@ -22,32 +21,7 @@ class BooksApp extends React.Component {
 
   changeBookShelf = (book, targetShelf) => {
     BooksAPI.update(book, targetShelf).then((result)=>{
-      console.log(result);
-
-      /*
-      let books = this.state.books;
-      let changedBooks = [];
-
-      result.currentlyReading.forEach((bookId)=>{
-        let book = books.find((book)=>book.id===bookId);
-        book.shelf = 'currentlyReading';
-        changedBooks.push(book);
-      });
-
-      result.wantToRead.forEach((bookId)=>{
-        let book = books.find((book)=>book.id===bookId);
-        book.shelf = 'wantToRead';
-        changedBooks.push(book);
-      });
-
-      result.read.forEach((bookId)=>{
-        let book = books.find((book)=>book.id===bookId);
-        book.shelf = 'read';
-        changedBooks.push(book);
-      });
-
-      this.setState({ books: changedBooks });
-      */
+      //console.log(result);
       this.refreshBooks();
     });
   }
@@ -73,17 +47,16 @@ class BooksApp extends React.Component {
   }
 
   refreshBooks = () => {
-    this.setState({loading:true});
     BooksAPI.getAll().then((books) => {
       this.setState({loading:false});
-      console.log(books)
+      //console.log(books)
       this.setState({ books });
     });
   }
 
   render() {
 
-    const { modalContent, loading } = this.state;
+    const { modalContent } = this.state;
 
     return (
       <div className="app">
